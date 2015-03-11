@@ -6,9 +6,9 @@ import scipy
 import scipy.stats
 import numpy as np
 from matplotlib import pyplot as plt
-import random
+import Orange
 
-NUM_OF_ATTRIBUTES = 10
+NUM_OF_ATTRIBUTES = 1
 
 def findMin( best10 ):
     pos = 0
@@ -103,87 +103,65 @@ intensity = normalizeVector( intensity )
 intensity = np.array(intensity)
 
 
-def func(sample, koeficients):
-    # SUPPORT MY LAZINESS :D
-    if ( koeficients == None ):
-        length = sample.shape[0]
-        koeficients = np.ones( length + 1 )
-
-    # ADD 1 TO THE END, SO THAT WE CAN USE SCALAR PRODUCT TO CREATE
-    # f = a0 + a1x1 + a2x2 + a3x3 + ...
-    setOFattributes = np.hstack((sample, 1))
-    return setOFattributes.dot(koeficients)
+def func(X, theta, lambda_):
+    if ( theta == None ):                               # support some of my laziness
+        length = X.shape[0]
+        theta = np.ones( length + 1 )
+    X = np.hstack((X, 1))                               # add 1 for afine translation of the line
+    return X.dot(theta)                                 # f = a0 + a1 x1 + a2 x2 + a3 x3 + ...
 
 
 # print func (np.array([1,2,3]), np.array([1,1,1,1]))
 
 
-def criteria_function(koeficients, *args):
-    # VSOTA RAZLIK KVADRATOV
-    samples, intensity = args[0], args[1]
-    return sum([ (func(samples[i], koeficients) - intensity[i])**2
-                 for i in range(samples.shape[0]) ])
+def criteria_function( theta, *args ):
+    samples, intensity, lambda_ = args[0], args[1], args[2]
+    n = samples.shape[0]                                # number of samples
+    crit_func = ( 1 / float(2*n) ) \
+                * sum([ (func(samples[i], theta) - intensity[i])**2
+                        for i in range(samples.shape[0]) ])
+    regularization = lambda_ * sum( theta**2 )          # regularization
+    return crit_func #+ regularization                   # crit_func + regularization
 
 
-def derive_crit_function(koeficients, *args):
-    samples, intensity = args[0], args[1]
+def criteria_function_grad( theta, *args ):
+    samples, y, lambda_ = args[0], args[1], args[2]
 
-    # CREATE LIST TO STORE ALL DERIVES FOR EACH KOEFICIENT
-    Phi = []
-
-    # SUPPORT SOME OF MY LAZYNESS
-    if ( koeficients == None ):
+    if ( theta == None ):                               # support some of my laziness
         length = samples[0].shape[0]
-        koeficients = np.ones( length + 1 )
+        theta = np.ones( length + 1 )
 
-    # DERIVE PHI, WHICH IS: 2* sum (f(x_ij) - y_i) * x_i
+    n = samples.shape[0]                                # number of samples
+    X = np.hstack((samples, 1))                         # add 1 for afine translation of the line
+    return ( 1/float(n) ) * (X.dot(theta) - y).dot(X)   # 1/n sum( ( f(x_ij) - y ) * x_i)
 
-    # COMPUTE J-TH COMPONENT OF PHI WHICH IS A DERIVATE OF J-TH KOEFICIENT
-    for j in xrange(koeficients.shape[0]):
-        sum = 0
-
-        # ITERATE THROUGH ALL SAMPLES
-        for i in xrange(samples.shape[0]):
-
-            # LITTLE REPAIR IF WE ARE AT THE LAST KOEFICIENT WHICH HAS NO ATRIBUTE
-            atr_val = 1 if (j == koeficients.shape[0] - 1) else samples[i][j]
-            sum += (func(samples[i], koeficients) - intensity[i]) * atr_val
-
-        # STORE THE DERIVATE TO THE RIGHT PLACE
-        Phi.append( 2 * sum )
-    return Phi
 
 samples = np.array(bestAttributes).T
 # print criteria_function (None, samples, intensity)
 # print derive_crit_function(None, samples, intensity)
 
 
-def check_derivation():
+def numerical_grad(f, params, epsilon):
+    num_grad = np.zeros_like(theta)
+    perturb = np.zeros_like(params)
+    for i in range(params.size):
+        perturb[i] = epsilon
+        j1 = f(params + perturb)
+        j2 = f(params - perturb)
+        num_grad[i] = (j1 - j2) / (2. * epsilon)
+        perturb[i] = 0
+    return num_grad
 
-    # CREATE RANDOM DATA
-    x = np.array([[random.randint(1, 10) for i in range(10)]])
-    y = np.array([20])
+data = Orange.data.Table('iris')
+X = data.X
+Y = np.eye(3)[data.Y.astype(int)]
+theta = np.random.randn(3 * 4)
 
-    length = samples[0].shape[0] + 1
-    koeficients = np.ones( length )
+# compare analytical gradient with gradient obtained by numerical differentiation
+ag = criteria_function_grad(theta, samples, intensity)
+ng = numerical_grad(lambda params: criteria_function(params, samples, intensity), theta, 1e-4)
+print(np.sum((ag - ng)**2))
 
-    # SET EPSILON
-    e = 0.1
-
-    koeficients1 = np.array([1+e]+ ([1] * (length - 1)))
-    koeficients2 = np.array([1-e]+ ([1] * (length - 1)))
-
-    d1 = derive_crit_function(koeficients, samples, intensity)
-    print "computed derivate", d1
-
-    # KONCNE DIFERENCE
-    d2 = np.array([( criteria_function(koeficients1, samples, intensity)
-                     - criteria_function(koeficients2, samples, intensity ))
-                   / float( 2*e )])
-    print "numeric derivate", d2
-
-
-# check_derivation()
 
 
 def optimization(samples, intensity):
@@ -196,14 +174,14 @@ def optimization(samples, intensity):
     #TODO fprime not working jet
     min, _,_ = scipy.optimize.fmin_l_bfgs_b( criteria_function,
                                              koeficients,
-                                             fprime=derive_crit_function,
+                                             fprime=criteria_function_grad,
                                              args=(samples,intensity),
                                              approx_grad=True)
     return min
 
 
-theta = optimization(samples, intensity)[::-1]
-print "bfgs", theta
+# theta = optimization(samples, intensity)[::-1]
+# print "bfgs", theta
 
 
 # JUST FOR COMPARISON WITH BFGS ALGORITHM
@@ -235,15 +213,15 @@ def draw(x, y, theta):
 # draw(bestAttributes[0], intensity, theta)
 
 
-dataT = get_data('../data/test.tab')
-dataT = [dataT[p] for p in positions]
-dataT = stringTOint(dataT)
-samples = dataT.T
-
-print "zapisujem"
-
-y = []
-f = open('../results/y5.txt', 'w')
-for i in samples:
-    y = func(i, theta)
-    f.write(str(y) + "\n")
+# dataT = get_data('../data/test.tab')
+# dataT = [dataT[p] for p in positions]
+# dataT = stringTOint(dataT)
+# samples = dataT.T
+#
+# print "zapisujem"
+#
+# y = []
+# f = open('../results/y5.txt', 'w')
+# for i in samples:
+#     y = func(i, theta)
+#     f.write(str(y) + "\n")
