@@ -6,6 +6,7 @@ from matplotlib import pyplot as plt
 import Orange
 from random import shuffle
 from sklearn import cross_validation, linear_model
+from sklearn import preprocessing
 import sklearn
 __author__ = 'Ales'
 
@@ -20,33 +21,17 @@ def func(theta, x):
 
 
 def criteria_function( theta, X_samples, y_value, lambda_ ):
-    """
-    Criteria function for function 'func'
-    :param theta:       Parameters of function 'func'
-    :param args:        #TODO
-    :return:            Computed value of a criteria function
-    """
+
     n = X_samples.shape[0]                                # number of samples
     crit_func = ( 1 / float(2*n) ) \
                 * sum([ (func(theta, X_samples[i]) - y_value[i])**2
                         for i in range(X_samples.shape[0]) ])
-    #TODO regularization
+
     regularization = lambda_ * sum( theta**2 )          # regularization
     return crit_func + regularization                   # crit_func + regularization
 
 
 def criteria_function_grad( theta, X_samples, y, lambda_ ):
-    """
-    Gradient of critera function
-    :param theta:           Parameters of function 'func'
-    :param args:
-    :return:                Gradient of a function at particular spot
-    """
-
-    if ( theta == None ):                               # support some of my laziness
-        length = X_samples[0].shape[0]
-        theta = np.ones( length + 1 )
-
     n = X_samples.shape[0]                                # number of samples
     return ( 1/float(n) ) * (X_samples.dot(theta) - y).dot(X_samples) + lambda_ *2 * theta  # 1/n sum( ( f(x_ij) - y ) * x_i)
 
@@ -67,13 +52,14 @@ def numerical_grad(f, params, epsilon):
     return num_grad
 
 
-def check_grad(X_samples, y):
+def check_grad(X, y):
     lambda_= 0.225
     # check gradient
-    theta = np.ones( X_samples.shape[1] )
-    ag = criteria_function_grad(theta, X_samples, y, lambda_)
-    ng = numerical_grad(lambda params: criteria_function(params, X_samples, y, lambda_), theta, 1e-4)
+    theta = np.ones( X.shape[1] )
+    ag = criteria_function_grad(theta, X, y, lambda_)
+    ng = numerical_grad(lambda params: criteria_function(params, X, y, lambda_), theta, 1e-4)
     print(np.sum((ag - ng)**2))
+
 
 
 ###############################################################################
@@ -101,6 +87,11 @@ def get_data(filename):
     return data
 
 
+def standardize(X):
+    scaler = preprocessing.StandardScaler().fit(X)
+    return scaler.transform(X)
+
+
 def get_best_attributes(n, data, y_compare):
     num_of_attributes = min(n, data.shape[1])
     attribute_positions = list(range(num_of_attributes))
@@ -111,29 +102,63 @@ def get_best_attributes(n, data, y_compare):
     return attribute_positions[:n]              # return best n attributes (their positions)
 
 
-def LinearRegression(X_samples, y_values, lambda_=0.1):
-    X_ones_samples = np.column_stack(( np.ones( X_samples.shape[0] ), X_samples ))
-    func = lambda theta: \
-        criteria_function( theta, X_ones_samples, y_values, lambda_ )
-    theta0 = np.ones( X_ones_samples.shape[1] )
-    grad = lambda theta: \
-        criteria_function_grad( theta, X_ones_samples, y_values, lambda_ )
+def LinearRegression(X, y_train, X_predict, lambda_=0.1):
 
-    theta, _, _ = scipy.optimize.fmin_l_bfgs_b( func, theta0, grad)
-    return theta
+    X = sklearn.preprocessing.scale(X)
+    X_predict = sklearn.preprocessing.scale(X_predict)
+
+    X_ones = np.column_stack(( np.ones( X.shape[0] ), X ))
+    func = lambda theta: criteria_function( theta, X_ones, y_train, lambda_ )
+    theta0 = np.ones( X_ones.shape[1] )
+    grad = lambda theta: criteria_function_grad( theta, X_ones, y_train, lambda_ )
+    theta, _, _ = scipy.optimize.fmin_l_bfgs_b( func, theta0, grad )      # grad is missing because of lasso and elastic net, otherwise we add it
+
+    X_predict = np.column_stack(( np.ones( X_predict.shape[0] ), X_predict ))
+    return X_predict.dot(theta)
 
 
-def predict( theta, X_samples ):
-    X_ones_samples = np.column_stack(( np.ones( X_samples.shape[0] ), X_samples ))
-    return X_ones_samples.dot(theta)
+def S(z, gamma):
+    return np.sign(z) * np.max((np.abs(z) - gamma), 0)
+
+def elastic_net(X, y, X_predict, lambda_=0.1, alpha=0.1, epochs=10):
+
+    X = sklearn.preprocessing.scale(X)
+    X_predict = sklearn.preprocessing.scale(X_predict)
+
+    X = np.column_stack(( np.ones( X.shape[0] ), X ))
+    N = X.shape[0]
+    theta = np.zeros( ( X.shape[1] ) ).T
+    for _ in range(epochs):
+        # for each field do it seperately
+        print "a"
+        for j in range( X.shape[1] ):
+            y_j = X.dot(theta) - X[:, j] * theta[j]     # remove j=l (look at the article)
+            theta[j] = S( (1/float(N)) * ( y-y_j ).dot( X[:, j]) , lambda_ * alpha) / float( 1 + lambda_ * (1 - alpha) )
+
+    X_predict = np.column_stack(( np.ones( X_predict.shape[0] ), X_predict ))
+    return X_predict.dot(theta)
 
 
 ###############################################################################
 # OTHER
 ###############################################################################
 
-def kfoldcv(X, y):
-    k = 10
+
+def lasso(X_train, y_train, X_test, alpha=0.1):
+    from sklearn.linear_model import Lasso
+    lasso = Lasso(alpha=alpha)
+    y_pred_lasso = lasso.fit(X_train, y_train).predict(X_test)
+    return y_pred_lasso
+
+
+def elastic(X_train, y_train, X_test, alpha=0.1):
+    from sklearn.linear_model import ElasticNet
+    enet = ElasticNet(alpha=alpha, l1_ratio=0.7)
+    y_pred_enet = enet.fit(X_train, y_train).predict(X_test)
+    return  y_pred_enet
+
+
+def kfoldcv(X, y, k):
     kf = cross_validation.KFold(len(y), n_folds=5)
     rmse = []
     for train_index, test_index in kf:
@@ -145,32 +170,43 @@ def kfoldcv(X, y):
         X_sel_tr = X_train[:, [i for _, i in scores[:k]]]
         X_sel_tst = X_test[:, [i for _, i in scores[:k]]]
 
-        lrn = linear_model.Ridge(alpha=0.01, fit_intercept=True, solver="lsqr").fit(X_sel_tr, y_train)
-        pred = lrn.predict(X_sel_tst)
+        # pred = LinearRegression(X_sel_tr, y_train, X_sel_tst, lambda_=0.01)
+        pred = lasso(X_sel_tr, y_train, X_sel_tst, alpha=2)
+        # pred = elastic(X_sel_tr, y_train, X_sel_tst, alpha=0.5)
+        # pred = elastic_net(X_sel_tr, y_train, X_sel_tst, lambda_=0.1, alpha=0.5, epochs=100)
         rmse.append(np.sqrt(sum((pred - y_test)**2)/len(y_test)))
     return np.mean(rmse)
+
+
+
 
 
 def run():
     # train_data = Orange.data.Table("../data/train.tab")
     # test_data = Orange.data.Table("../data/test.tab")
+    k = 30
     train_data = get_data("../data/train.tab")
-    print train_data.shape[1]
     test_data = get_data("../data/test.tab")
 
-    X_samples = (stringTOint( train_data[:,:-2] ))
-    X_samples_test = (stringTOint( test_data[:,:-2] ))
-    y = (stringTOint( train_data[:, -2] ))
+    X = (stringTOint( train_data[:,:-2] ))
+    X_predict = (stringTOint( test_data[:,:-2] ))
+    y_train = (stringTOint( train_data[:, -2] ))
 
-    num_of_attributes = 50
-    best_att_positions = get_best_attributes(num_of_attributes, X_samples, y)
-    theta = LinearRegression(X_samples[:,best_att_positions], y, lambda_=0.225)
-    # print theta
-    results = predict( theta, X_samples_test[:, best_att_positions] )
+    # pred = LinearRegression(X, y_train, X_predict, lambda_=0.1)
+    # pred = elastic_net(X, y_train, X_predict, lambda_=0.5, alpha=0.5, epochs=10)
+    # pred = lasso(X_train, y_train, X_test)
+    # pred = elastic(X_train, y_train, X_test)
 
-    # f = open('../results/r0.txt', 'w')
-    # for i in results:
-    #     f.write(str(i) + "\n")
+    y = 0
+    if (y == 1):
+        f = open('../results/e3.txt', 'w')
+        for i in pred:
+            f.write(str(i) + "\n")
 
-    print kfoldcv(X_samples, y)
+        print "Zapisano"
+
+    # check_grad(X, y_train)
+    print kfoldcv(X, y_train, k)
 run()
+
+
