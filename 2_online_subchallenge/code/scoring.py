@@ -119,11 +119,12 @@ def final_score(rs):
 
 if __name__ == "__main__":
 
-    LEGEND = legend("TrainSet-hw2.txt")
+    LEGEND = legend("../data/TrainSet-hw2.txt")
+    #query = read_query("predict.txt")
+    test = load_data_mean_indv("../data/TrainSet-hw2.txt")
+    print (test)
+    #leaderboard = load_data_mean_indv("LeaderboardSet-hw2.txt")
 
-    query = read_query("predict.txt")
-    test = load_data_mean_indv("TestSet-hw2.txt")
-    leaderboard = load_data_mean_indv("LeaderboardSet-hw2.txt")
 
     query_test = [ a for a in query if a in test ]
     query_leaderboard = [ a for a in query if a in leaderboard ]
