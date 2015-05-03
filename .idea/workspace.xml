@@ -1,74 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="820548f5-3640-4637-bbee-43b8ca67cb42" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Git\DataGit\data\CID_leaderboard.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\data\CID_testset.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\data\TrainSet.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\data\train_set.mat" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\backup\backup1.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\backup\orangeTable.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\.ipynb_checkpoints\Untitled0-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\Untitled0.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\advanced_linear_regression.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\andrej2.py.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\lasso.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\matej.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\n-regressionTraining.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\regressionTraining.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\code\ucilnica.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\data\test.tab" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\data\train.tab" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\oddaja\Elastic.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\oddaja\ElasticLibrary.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\oddaja\LassoLibrary.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\oddaja\LinReg.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\oddaja\LinReg_regularization.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\best40.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\e1.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\e2.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\lr1.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\r0.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\rs0.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\y.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\y2.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\y3.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\y4.txt" afterPath="" />
-      <change type="DELETED" beforePath="D:\Git\DataGit\linear_regression\results\y5.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2_online_subchallenge/code/1_beginning.ipynb" afterPath="$PROJECT_DIR$/2_online_subchallenge/code/1_beginning.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\backup\backup1.py" afterPath="$PROJECT_DIR$/1_linear_regression/backup/backup1.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\backup\orangeTable.py" afterPath="$PROJECT_DIR$/1_linear_regression/backup/orangeTable.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\.ipynb_checkpoints\Untitled0-checkpoint.ipynb" afterPath="$PROJECT_DIR$/1_linear_regression/code/.ipynb_checkpoints/Untitled0-checkpoint.ipynb" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\Untitled0.ipynb" afterPath="$PROJECT_DIR$/1_linear_regression/code/Untitled0.ipynb" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\__init__.py" afterPath="$PROJECT_DIR$/1_linear_regression/code/__init__.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\advanced_linear_regression.py" afterPath="$PROJECT_DIR$/1_linear_regression/code/advanced_linear_regression.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\andrej2.py.txt" afterPath="$PROJECT_DIR$/1_linear_regression/code/andrej2.py.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\lasso.py" afterPath="$PROJECT_DIR$/1_linear_regression/code/lasso.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\matej.py" afterPath="$PROJECT_DIR$/1_linear_regression/code/matej.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\n-regressionTraining.py" afterPath="$PROJECT_DIR$/1_linear_regression/code/n-regressionTraining.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\regressionTraining.py" afterPath="$PROJECT_DIR$/1_linear_regression/code/regressionTraining.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\code\ucilnica.py" afterPath="$PROJECT_DIR$/1_linear_regression/code/ucilnica.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\data\test.tab" afterPath="$PROJECT_DIR$/1_linear_regression/data/test.tab" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\data\train.tab" afterPath="$PROJECT_DIR$/1_linear_regression/data/train.tab" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\oddaja\Elastic.py" afterPath="$PROJECT_DIR$/1_linear_regression/oddaja/Elastic.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\oddaja\ElasticLibrary.py" afterPath="$PROJECT_DIR$/1_linear_regression/oddaja/ElasticLibrary.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\oddaja\LassoLibrary.py" afterPath="$PROJECT_DIR$/1_linear_regression/oddaja/LassoLibrary.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\oddaja\LinReg.py" afterPath="$PROJECT_DIR$/1_linear_regression/oddaja/LinReg.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\oddaja\LinReg_regularization.py" afterPath="$PROJECT_DIR$/1_linear_regression/oddaja/LinReg_regularization.py" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\best40.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/best40.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\e1.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/e1.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\e2.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/e2.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\lr1.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/lr1.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\r0.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/r0.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\rs0.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/rs0.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\y.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/y.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\y2.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/y2.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\y3.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/y3.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\y4.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/y4.txt" />
-      <change type="MOVED" beforePath="D:\Git\DataGit\linear_regression\results\y5.txt" afterPath="$PROJECT_DIR$/1_linear_regression/results/y5.txt" />
-    </list>
+    <list default="true" id="820548f5-3640-4637-bbee-43b8ca67cb42" name="Default" comment="" />
     <ignored path="DataGit.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -93,7 +26,7 @@
       <file leaf-file-name="scoring.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/2_online_subchallenge/code/scoring.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33239037" vertical-offset="343" max-vertical-offset="2533">
+            <state vertical-scroll-proportion="0.32103825" vertical-offset="343" max-vertical-offset="2533">
               <caret line="34" column="5" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="5" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -179,6 +112,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -221,25 +155,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="1_linear_regression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataGit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DataGit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="1_linear_regression" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
+              <option name="myItemId" value="2_online_subchallenge" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -279,9 +195,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataGit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataGit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1_linear_regression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataGit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataGit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1_linear_regression" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -561,7 +508,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2647059" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08359721" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21722609" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39839572" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -569,11 +516,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -968,7 +915,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2_online_subchallenge/code/scoring.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33239037" vertical-offset="343" max-vertical-offset="2533">
+        <state vertical-scroll-proportion="0.32103825" vertical-offset="343" max-vertical-offset="2533">
           <caret line="34" column="5" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="5" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
