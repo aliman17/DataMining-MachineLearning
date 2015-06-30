@@ -1,0 +1,20 @@
+One snake's ability to shimmy up slippery sand dunes could inspire new technologies for robots that could perform search and rescue missions, carry out inspections of hazardous wastes and even explore ancient pyramids.
+
+A new study looked at the North American desert-dwelling sidewinder rattlesnake (Crotalus cerastes), a creature better known for its venomous bite than its graceful movements. But this snake can climb up sandy slopes without sliding back down to the bottom — a feat that few snake species can accomplish.
+
+Snakelike, or limbless, robots are intriguing to scientists for several reasons. First, their lack of legs, wheels or tracks means they don't often get stuck in ruts or held up by bumps in their path. They could also be used to access areas that other bots can't get to, or to explore places that aren't safe for humans. [Biomimicry: 7 Clever Technologies Inspired by Nature]
+
+
+The sidewinder shimmy
+
+To get a closer look at their live study subjects, the researchers headed to Zoo Atlanta, where they were able to examine six sidewinder rattlesnakes. They tested the snakes on a specially designed inclined table covered with loosely packed sand.
+
+Fifty-four trials were conducted, with each of the six snakes slithering up the sandy table nine times, three times each at varying degrees of steepness. As the snakes worked their way up the makeshift sand dune, high-speed cameras tracked their movements, taking note of exactly where their bodies came into contact with the sand as they moved upward.
+
+The researchers found that sidewinder snakes live up to their name. The slithery creatures moved up the sandy incline in a sideways motion, with their heads pointing toward the top of the incline and the rest of their bodies moving horizontally up the slope. The researchers then looked more carefully at how sidewinders carry out these complex movements.
+
+"The snakes tended to increase the amount of body in contact with the surface at any instant in time when they were sidewinding up the slope and the incline angle increased," said Daniel Goldman, co-author of the study and an associate professor of biomechanics at the Georgia Institute of Technology in Atlanta. Specifically, the snakes doubled the amount of their bodies touching the sand when navigating the slope, he added.
+
+The Carnegie Mellon snake robot.Pin It The Carnegie Mellon snake robot has finally mastered the art of slithering up a sandy slope.
+Credit: Nico Zevallos and Chaohui GongView full size image
+And the parts of the snake's body that were touching the sand during the ascent never slipped back down the slope because the creature applied the right amount of force in its movements, keeping the sand under it from sliding, Goldman told Live Science.

@@ -1,0 +1,31 @@
+In addition to explaining a peculiar natural phenomenon, the insight could lead to the development of small flying machines that are as graceful and efficient as animal gliders. [See Photos of the Flying Paradise Tree Snake]
+
+"The results are important, because they show how an aerodynamically very counterintuitive shape can create a high lift flow," said study co-author Pavlos Vlachos of Purdue University in Indiana, referring to the skinny, small surface-area snake shape.
+
+The snake can adjust its flight path while in the air and position its body at really high angles of attack, when most planes would stall.
+
+The study is a step forward from previous research that showed the snakes were getting an extra boost to keep them aloft. "In this work, we explain what the air is doing to generate that," said lead study author Lorena Barba of The George Washington University. "We explain the way the air whirls around the snake's body section to give it uplift. It is all due to how eddies whirl around, creating lower pressures than the surrounding air."
+
+Extra "oomph"
+
+Previous research had shown that the snakes flex their ribs before starting to glide, extending and flattening their body from a circular tube into a weird, flattened, UFO-like S-shape.
+
+And just a few months ago, a team of scientists, among them some of the co-authors of the latest study, published a paper in the Journal of Experimental Biology. There, they described their attempts to analyze flying snakes' gliding ability — not just how far and how high they fly, but also the amount of force exerted on them by the air.
+
+To study the aerodynamics of the glide, the researchers then used a 3D printer to build models of this UFO-like cross-section of the snake's body. They put the model into a tank full of water, using it to simulate the airflow across the artificial "snake" and experimented with the positioning angle of the cross-section. 
+
+The experiments "revealed something very surprising: Just before stall, the snake section experiences an extra 'oopmh' of upward force," Barba said.
+
+It's easy to measure forces in a test tunnel, but it's not so easy to see what the air is doing, and how little whirls of wind turn and circle around, Barba said. It is possible, however, to use smoke or little floating particles and take pictures, but this method doesn't show many details of what is happening, she added.
+
+Changing angle of attack
+
+The new study used a computer simulation of the snake section in wind and experimented with it virtually, tilting it on the screen to change the air's angle of attack. This allowed the researchers to visualize the air spinning around in precise detail, and enabled them to measure the aerodynamic forces acting on the virtual snake.
+
+"The computer simulations confirmed the result of the experiments," Barba said. "At an angle of attack of 35 degrees, the snake section experiences extra uplift — a noticeable peak."
+
+Also, when the model was positioned level with the airflow, that air pushed the snake down. The air flowing around the "snake" formed a vortex sitting beneath the level snake shape, pulling it downward.
+
+The scientists say the snake could control its flight by twisting its body in midair, to fine-tune the forces acting on its body. "In this work, we were able to better explain the process by which the snake is creating the vortices over the body and how these help increase the lift," Vlachos said.
+
+Snake suits?
